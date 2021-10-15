@@ -3,7 +3,7 @@
 This library can be used to build any application which needs to use TCP to HTTP tunneling for, for example, bypassing a firewall.
 
 ## How to build  
-simply run:
+simply run:  
     ./gradlew build
 
 ## Install from maven central  
