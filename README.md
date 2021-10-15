@@ -4,6 +4,7 @@ This library can be used to build any application which needs to use TCP to HTTP
 
 ## How to build  
 simply run:  
->    ./gradlew build
-
+```bash
+./gradlew build
+```
 ## Install from maven central  
