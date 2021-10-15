@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets
 
 /**
  * This class handles the TCP to HTTP tunneling mechanism.
- * @author zmdx
+ * @author ericmpapa
  * @since 1.0
  */
 

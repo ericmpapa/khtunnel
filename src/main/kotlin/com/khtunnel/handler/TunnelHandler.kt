@@ -23,7 +23,7 @@ import java.util.*
  * @property ious the incoming socket's OutputStream.
  * @property oous the outgoing socket's OutputStream.
  * @property readBufferSize the size of the reading buffer.
- * @author zmdx
+ * @author ericmpapa
  * @since 1.0
  */
 

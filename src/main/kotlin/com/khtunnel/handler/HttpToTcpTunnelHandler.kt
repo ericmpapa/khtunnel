@@ -21,7 +21,7 @@ import java.net.SocketException
 /**
  * This class handles the HTTP to TCP tunneling mechanism.
  * @property buffer the buffer holding data to be transmitted.
- * @author zmdx
+ * @author ericmpapa
  * @since 1.0
  */
 

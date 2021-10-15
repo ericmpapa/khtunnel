@@ -16,7 +16,7 @@ package com.khtunnel.http
  * @property code the response code.
  * @property message the response message.
  * @constructor creates an empty success (200) response.
- * @author zmdx
+ * @author ericmpapa
  * @since 1.0
 */
 

@@ -12,7 +12,7 @@ package com.khtunnel.http
 
 /**
  * This object implements an HTTP Parser.
- * @author zmdx
+ * @author ericmpapa
  * @since 1.0
  */
 object HttpParser {

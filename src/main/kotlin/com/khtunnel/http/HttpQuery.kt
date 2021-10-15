@@ -14,7 +14,7 @@ package com.khtunnel.http
  * This class is a basic implementation of an HTTP query.
  * @property headers an HashMap representing the headers of the query.
  * @property body the body of the request.
- * @author zmdx
+ * @author ericmpapa
  * @since 1.0
  */
 abstract class HttpQuery {
