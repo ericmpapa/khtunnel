@@ -8,7 +8,7 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.khtunnel.http
+package io.github.ericmpapa.khtunnel.http
 
 /**
  * This object implements an HTTP Parser.
@@ -23,8 +23,8 @@ object HttpParser {
      * @return an HttpRequest if the query is an HTTP request, an HttpResponse if the query is an HTTP response, null if the parsing fails.
      */
     @JvmStatic
-    fun parse(byteArray:ByteArray):HttpQuery?{
-        var httpQuery:HttpQuery? = null
+    fun parse(byteArray:ByteArray): HttpQuery?{
+        var httpQuery: HttpQuery? = null
         var query = String(byteArray)
         if(isValidRequest(query)){
             query = query.replace("\r\n\r\n","###")

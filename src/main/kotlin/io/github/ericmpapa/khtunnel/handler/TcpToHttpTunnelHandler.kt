@@ -8,9 +8,9 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.khtunnel.handler
+package io.github.ericmpapa.khtunnel.handler
 
-import com.khtunnel.http.HttpRequest
+import io.github.ericmpapa.khtunnel.http.HttpRequest
 import java.net.Socket
 import java.net.SocketException
 import java.nio.charset.StandardCharsets
@@ -29,7 +29,7 @@ open class TcpToHttpTunnelHandler(
      * Add extra headers to the HTTP request that will be sent on the network.
      * @param httpRequest The HTTP request that will be sent on the network.
      */
-    open fun addHeaders(httpRequest:HttpRequest){}
+    open fun addHeaders(httpRequest: HttpRequest){}
 
     override fun run(){
         try{

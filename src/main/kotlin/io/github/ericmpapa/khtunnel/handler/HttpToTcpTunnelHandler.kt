@@ -8,11 +8,11 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.khtunnel.handler
+package io.github.ericmpapa.khtunnel.handler
 
-import com.khtunnel.http.HttpParser
-import com.khtunnel.http.HttpRequest
-import com.khtunnel.http.HttpResponse
+import io.github.ericmpapa.khtunnel.http.HttpParser
+import io.github.ericmpapa.khtunnel.http.HttpRequest
+import io.github.ericmpapa.khtunnel.http.HttpResponse
 
 import java.net.Socket
 import java.net.SocketException
@@ -28,7 +28,7 @@ import java.net.SocketException
 open class HttpToTcpTunnelHandler(
     inSocket:Socket,
     outSocket:Socket
-    ):TunnelHandler(inSocket,outSocket) {
+    ): TunnelHandler(inSocket,outSocket) {
 
     private var buffer = ByteArray(0)
 

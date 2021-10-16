@@ -8,35 +8,43 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.khtunnel.http
+package io.github.ericmpapa.khtunnel.http
 
 /**
- * This class is a basic implementation of an HTTP request.
- * @property version the HTTP version.
- * @property url the request url.
- * @property method the request method.
- * @constructor creates an empty HTTP request.
- * @author zmdx
+ * This class is a basic implementation of an HTTP query.
+ * @property headers an HashMap representing the headers of the query.
+ * @property body the body of the request.
+ * @author ericmpapa
  * @since 1.0
-*/
+ */
+abstract class HttpQuery {
+    protected val headers = HashMap<String, String>()
+    var body = String()
 
-class HttpRequest(var version:String = "HTTP/1.1",
-                  var url:String = "/",
-                  var method:String = "GET"): HttpQuery(){
-    companion object HttpRequest{
-        const val METHOD_GET = "GET"
-        const val METHOD_POST = "POST"
-        const val METHOD_CONNECT = "CONNECT"
+    /**
+     * Return a byteArray of toString.
+     * @return a byteArray.
+     */
+    fun toByteArray():ByteArray{
+        return toString().toByteArray()
     }
 
-    override fun toString():String{
-        var ret = "$method $url $version\r\n"
-        for((key,value) in headers){
-            ret += "$key:$value\r\n"
-        }
-        ret += "\r\n"
-        ret += body
-        ret += "\r\n\r\n"
-        return ret
+
+    /**
+     * Set a header value.
+     * @param  key  the header key.
+     * @param  value  the header value.
+     */
+    fun setHeader(key:String,value:String){
+        headers[key] = value
+    }
+
+    /**
+     * Get a header value.
+     * @param  key  the header key.
+     * @return the header value.
+     */
+    fun getHeader(key:String):String?{
+        return headers[key]
     }
 }

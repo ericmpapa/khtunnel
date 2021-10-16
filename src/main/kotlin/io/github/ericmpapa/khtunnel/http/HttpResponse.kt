@@ -8,43 +8,37 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.khtunnel.http
+package io.github.ericmpapa.khtunnel.http
 
 /**
- * This class is a basic implementation of an HTTP query.
- * @property headers an HashMap representing the headers of the query.
- * @property body the body of the request.
+ * This class is a basic implementation of an HTTP response.
+ * @property version the HTTP version.
+ * @property code the response code.
+ * @property message the response message.
+ * @constructor creates an empty success (200) response.
  * @author ericmpapa
  * @since 1.0
- */
-abstract class HttpQuery {
-    protected val headers = HashMap<String, String>()
-    var body = String()
+*/
 
-    /**
-     * Return a byteArray of toString.
-     * @return a byteArray.
-     */
-    fun toByteArray():ByteArray{
-        return toString().toByteArray()
+class HttpResponse(var version:String = "HTTP/1.1",
+                   var code:Int=200,
+                   var message:String = "OK"): HttpQuery(){
+    companion object{
+        const val RESPONSE_OK = 200
+        const val RESPONSE_BAD_REQUEST = 400
+        const val RESPONSE_UNAUTHORIZED = 401
+        const val RESPONSE_FORBIDDEN = 400
+        const val RESPONSE_SERVER_ERROR = 500
     }
 
-
-    /**
-     * Set a header value.
-     * @param  key  the header key.
-     * @param  value  the header value.
-     */
-    fun setHeader(key:String,value:String){
-        headers[key] = value
-    }
-
-    /**
-     * Get a header value.
-     * @param  key  the header key.
-     * @return the header value.
-     */
-    fun getHeader(key:String):String?{
-        return headers[key]
+    override fun toString():String{
+        var ret = "$version $code $message\r\n"
+        for((key,value) in headers){
+            ret += "$key:$value\r\n"
+        }
+        ret += "\r\n"
+        ret += body
+        ret += "\r\n\r\n"
+        return ret
     }
 }
