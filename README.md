@@ -7,4 +7,12 @@ simply run:
 ```bash
 ./gradlew build
 ```
-## Install from maven central  
+## Gradle installation from maven central  
+Kotlin DSL    
+```kotlin
+implmentation("io.github.ericmpapa:khtunnel:1.0")
+```
+Groovy DSL  
+```groovy
+implementation "io.github.ericmpapa:khtunnel:1.0"
+```
